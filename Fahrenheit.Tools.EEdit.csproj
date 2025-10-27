@@ -1,0 +1,47 @@
+﻿<Project>
+
+    <!-- ASSEMBLY BASIC PROPERTIES -->
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+    </PropertyGroup>
+
+    <!-- ASSEMBLY ADDITIONAL PROPERTIES -->
+    <PropertyGroup>
+        <AssemblyName>fheedit</AssemblyName>
+        <AssemblyTitle>Fahrenheit Excel File Editor</AssemblyTitle>
+        <Product>Fahrenheit Excel File Editor</Product>
+    </PropertyGroup>
+
+    <!-- PUBLISH SETTINGS -->
+    <PropertyGroup>
+        <PublishSingleFile>true</PublishSingleFile>
+        <SelfContained>false</SelfContained>
+    </PropertyGroup>
+
+    <!-- SDK REFERENCES -->
+    <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+
+    <!-- SHARED FILE LINKS -->
+    <ItemGroup>
+        <None Include="$(SolutionDir).editorconfig" Link=".editorconfig" />
+    </ItemGroup>
+
+    <!-- PROJECT REFERENCES -->
+    <ItemGroup>
+        <ProjectReference Include="..\..\core\framework\Fahrenheit.Core.csproj">
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        </ProjectReference>
+    </ItemGroup>
+
+    <!-- PACKAGE REFERENCES -->
+    <ItemGroup>
+        <PackageReference Include="System.CommandLine" Version="2.0.0-beta5.25306.1" />
+    </ItemGroup>
+
+</Project>
