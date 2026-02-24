@@ -11,4 +11,4 @@ global using System.IO;
 global using System.Text;
 global using System.Runtime.InteropServices;
 
-global using Fahrenheit.Core;
+global using Fahrenheit;
